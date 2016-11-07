@@ -13,9 +13,11 @@ from models import Temperature
 def home(request):
     # temp_value = Temperature.objects.all()
 
-    model_to_dict(Temperature)
+    var = model_to_dict(Temperature)
 
-    return render(request, 'base/home.html')
+
+
+    return render(request, 'base/home.html' , var)
 
 
 def get_temperature(request):
