@@ -1,9 +1,13 @@
 body{
-background-color: purple;
+background-color: gray;
 
 }
 .row{
-padding-top: 30px;
-margin-left: 450px;
+margin-left: 400px;
 
+}
+
+h4{
+margin: 100px;
+font-family: 'Shrikhand', cursive;
 }
