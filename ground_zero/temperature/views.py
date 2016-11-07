@@ -27,9 +27,12 @@ def get_temperature(request):
     if form.is_valid():
         temp_value = form.cleaned_data['temp_value']
         temp = Temperature() # initializes the model table
-        temp.temp_value = temp_value # get first value
+        # temp.temp_value = temp_value # get first value
         temp.created_time = datetime.datetime.now() # add second value
+        temp = form.save(commit=False)
         temp.save() # save data
         return HttpResponseRedirect('/get_temp/')
     else:
         return render(request, 'base/temp_input.html')
+
+

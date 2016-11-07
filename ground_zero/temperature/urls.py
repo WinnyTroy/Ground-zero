@@ -4,6 +4,6 @@ from temperature import views
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^getting_temp', views.get_temperature, name='get_temp'),
+    url(r'^get_temp', views.get_temperature, name='get_temp'),
 
 ]
