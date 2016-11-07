@@ -3,13 +3,19 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import datetime
 import json
+from django.forms.models import model_to_dict
+
 
 from forms import TemperatureForm
 from models import Temperature
 
 
 def home(request):
-    return render(request, 'base/home.html')
+    # temp_value = Temperature.objects.all()
+
+    model_to_dict(Temperature)
+
+    return render(request, 'base/temp_input.html')
 
 
 def get_temperature(request):

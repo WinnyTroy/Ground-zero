@@ -15,6 +15,9 @@
     <form action="" method="post"> {% csrf_token %}
         {{ form.as_p }}
 
+        <textarea name="temp_value" id="" cols="30" rows="10"></textarea>
+        <br>
+
         <button type="submit"> SAVE! </button>
 
 
