@@ -15,10 +15,11 @@ def home(request):
 
     model_to_dict(Temperature)
 
-    return render(request, 'base/temp_input.html')
+    return render(request, 'base/home.html')
 
 
 def get_temperature(request):
+
     """ This method gets temperature data and saves to database """
     form = TemperatureForm(request.POST)
     if form.is_valid():
@@ -27,6 +28,6 @@ def get_temperature(request):
         temp.temp_value = temp_value # get first value
         temp.created_time = datetime.datetime.now() # add second value
         temp.save() # save data
-        return HttpResponseRedirect('/home/')
+        return HttpResponseRedirect('/get_temp/')
     else:
         return render(request, 'base/temp_input.html')
