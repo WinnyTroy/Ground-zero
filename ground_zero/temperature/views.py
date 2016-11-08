@@ -15,8 +15,6 @@ def home(request):
 
     var = model_to_dict(Temperature)
 
-
-
     return render(request, 'base/home.html' , var)
 
 
