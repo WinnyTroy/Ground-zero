@@ -1,9 +1,9 @@
+from django.core.serializers import serialize
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import datetime
-import json
-from django.forms.models import model_to_dict
+from django.http import JsonResponse
 
 
 from forms import TemperatureForm
@@ -11,11 +11,13 @@ from models import Temperature
 
 
 def home(request):
-    # temp_value = Temperature.objects.all()
 
-    var = model_to_dict(Temperature)
+    # querying all the data from the database
+    temp_data = Temperature.objects.values().order_by('-created_time')
+    # list object that loops through the queried data then dumps them in a  list
+    json_object= [item for item in temp_data]
 
-    return render(request, 'base/home.html' , var)
+    return render(request, 'base/home.html', context={"json_object":json_object})
 
 
 def get_temperature(request):
