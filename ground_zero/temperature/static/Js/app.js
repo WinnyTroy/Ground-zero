@@ -4,22 +4,63 @@ $(function () {
             type: 'column'
         },
         title: {
-            text: 'Temperature Evaluation'
+            text: 'Weekly Temperature Evaluation'
         },
         xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
+            type: 'datetime',
             title: {
                 text: 'Date/Time'
             }
         },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
+        yAxis: {
+            title: {
+                text: 'Temp Value'
+            }
+        },
+        series: [{ }]
+
     });
 });
+
+
+//$(function () {
+//    $.getJSON('http://127.0.0.1:8000/ground_zero/data/jsonp.php?filename=range.json&callback=?', function(data) {
+//
+//    	$('#container').highcharts({
+//
+//		    chart: {
+//		        type: 'spline'
+//		    },
+//
+//		    title: {
+//		        text: 'Temperature variation by day'
+//		    },
+//
+//		    xAxis: {
+//		        type: 'datetime'
+//		    },
+//
+//		    yAxis: {
+//		        title: {
+//		            text: null
+//		        }
+//		    },
+//
+//		    tooltip: {
+//		        crosshairs: true,
+//		        shared: true,
+//		        valueSuffix: '°C'
+//		    },
+//
+//		    legend: {
+//		        enabled: false
+//		    },
+//
+//		    series: [{
+//
+//		    }]
+//
+//		});
+//    });
+//
+//});
