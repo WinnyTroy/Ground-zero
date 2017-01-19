@@ -12,4 +12,4 @@ class Temperature(models.Model):
     model to store temperature value
     """
     temp_value = models.CharField(max_length=70)
-    created_time = models.TimeField(_(u"created Time"), blank=True, default=datetime.now())
+    created_time = models.DateField(_(u"created Time"), blank=True, default=datetime.now())
